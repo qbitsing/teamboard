@@ -1,11 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import modules from './modules'
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules,
-  strict: process.env.NODE_ENV !== 'production'
+  state: {
+    layout: 'simple-layout'
+  },
+  mutations: {
+    SET_LAYOUT (state, payload) {
+      state.layout = payload
+    }
+  },
+  getters: {
+    layout: state => state.layout
+  }
 })

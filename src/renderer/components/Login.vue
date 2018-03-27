@@ -62,7 +62,7 @@
                   ></v-text-field>
                   <v-text-field
                   label="Email"
-                  v-model="registerEmail"
+                  v-model="email"
                   prepend-icon="email"
                   ></v-text-field>
                   <v-text-field
@@ -96,6 +96,13 @@
 export default {
   data () {
     return {
+      active: null,
+      loginUsername: null,
+      registerUsername: null,
+      email: null,
+      loginPassword: null,
+      registerPassword: null,
+      confirmPassword: null,
       socials: [
         {icon: 'fab fa-github', username: '@narias1999', url: 'https://github.com/Narias1999'},
         {icon: 'fab fa-linkedin', username: 'Nicolás Mateo Arias Pulido', url: 'https://www.linkedin.com/in/nicol%C3%A1s-mateo-arias-pulido-184882160/'},
@@ -109,6 +116,9 @@ export default {
     openBrowser (url) {
       this.$electron.shell.openExternal(url)
     }
+  },
+  created () {
+    this.$store.commit('SET_LAYOUT', 'simple-layout')
   }
 }
 </script>
@@ -126,6 +136,9 @@ export default {
  }
  .bg {
    position: absolute;
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
    z-index: 0;
  }
  .info-developer {
@@ -151,8 +164,13 @@ export default {
  .login {
    padding: 50px;
  }
- @media screen and (max-width: 800px){
+ @media screen and (max-height: 570px) {
    .login {
+     padding: 0;
+   }
+ }
+ @media screen and (max-width: 800px){
+  .login {
      padding: 0;
    }
    .form {

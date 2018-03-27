@@ -1,15 +1,24 @@
 <template>
   <div id="app">
     <v-app>
-      <v-slide-y-transition mode="out-in">
-        <router-view></router-view>
-      </v-slide-y-transition>
+      <component :is="layout"></component>
     </v-app>
   </div>
 </template>
 <script>
+  import SimpleLayout from './components/layouts/simple'
+  import AppLayout from './components/layouts/app'
   export default {
-    name: 'TeamBoard'
+    name: 'TeamBoard',
+    components: { SimpleLayout, AppLayout },
+    created () {
+      console.log(this)
+    },
+    computed: {
+      layout () {
+        return this.$store.getters.layout
+      }
+    }
   }
 </script>
 <style>
