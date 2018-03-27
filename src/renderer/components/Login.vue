@@ -46,7 +46,7 @@
                   v-model="loginPassword"
                   prepend-icon="lock"
                   ></v-text-field>
-                  <v-btn block color="primary">SEND</v-btn>
+                  <v-btn @click="$router.push('/panel')" block color="primary">SEND</v-btn>
                 </v-form>
               </v-flex>
             </v-layout>

@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
+import Dashboard from '@/components/Dashboard'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'welcome-view',
+      name: 'Login',
       component: Login
     },
     {
-      path: '/inspire',
-      name: 'inspire',
-      component: require('@/components/InspireView').default
+      path: '/panel',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '*',
