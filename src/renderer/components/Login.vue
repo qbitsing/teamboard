@@ -8,9 +8,9 @@
                 <v-avatar size="170">
                     <img class="logo" src="~@/assets/logo.png" alt="electron-vue">
                 </v-avatar>
-                <p>This is my awesome slogan motherfuckers!</p>
+                <p>This is my awesome slogan!</p>
                 <div class="info-developer">
-                    <p>Developed by: <strong>Nicolás Arias</strong></p>
+                    <p>Developed by: <strong>Qbits</strong></p>
                     <div class="socials">
                       <v-tooltip v-for="social in socials" :key="social.username" top>
                         <v-btn @click="openBrowser(social.url)" slot="activator" flat icon color="white">
@@ -104,10 +104,7 @@ export default {
       registerPassword: null,
       confirmPassword: null,
       socials: [
-        {icon: 'fab fa-github', username: '@narias1999', url: 'https://github.com/Narias1999'},
-        {icon: 'fab fa-linkedin', username: 'Nicolás Mateo Arias Pulido', url: 'https://www.linkedin.com/in/nicol%C3%A1s-mateo-arias-pulido-184882160/'},
-        {icon: 'fab fa-twitter', username: '@nmarias_dev', url: 'https://twitter.com/nmarias_dev'},
-        {icon: 'fas fa-envelope', username: 'nmarias38@misena.edu.co'}
+        {icon: 'fab fa-github', username: '@qbitsing', url: 'https://github.com/qbitsing'}
       ],
       e1: true
     }
